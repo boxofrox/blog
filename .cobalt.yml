@@ -1,0 +1,6 @@
+name: Dumber Than a Box of Rocks
+source: "."
+dest: "build"
+ignore:
+  - .git/*
+  - build/*
