@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if is_post %}
+      <title>{{ title }}</title>
+    {% else %}
+      <title>Blog | Boxofrox</title>
+    {% endif %}
+
+    <link rel="stylesheet" href="/assets/css/normalize.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+  </head>
+  <body>
+    <div class="c-content">
+      <header class="c-blog-name">
+        <h2 class="c-blog-name__heading"><a href="/">Boxofrox Blog</a></h2>
+      </header>
+      <main class="c-main">
         {% if is_post %}
-          <title>{{ title }}</title>
+          {% include '_layouts/post.liquid' %}
         {% else %}
-          <title>Boxofrox</title>
+          {{ content }}
         {% endif %}
-
-        <link rel="stylesheet" href="/assets/css/normalize.min.css">
-        <link rel="stylesheet" href="/assets/css/main.css">
-
-    </head>
-    <body>
-    <div>
-      {% if is_post %}
-        {% include '_layouts/post.liquid' %}
-      {% else %}
-        {{ content }}
-      {% endif %}
+      </main>
+      <footer class="c-footer">
+        <div class="u-text--center"><small>
+          Copyright &copy; 2017 - Justin Charette (boxofrox)
+        </small></div>
+        <div class="u-text--center"><small>
+          Powered by
+          <a href="https://github.com/cobalt-org/cobalt.rs">cobalt.rs</a>
+        </small></div>
+      </footer>
     </div>
   </body>
 </html>
