@@ -1,6 +1,12 @@
-name: Dumber Than a Box of Rocks
-source: "."
-dest: "build"
+name: Boxofrox
+description: Personal Blog
+source: ./
+dest: ./build
+link: http://blog.boxofrox.me
+syntax-highlight:
+  theme: base16-eighties.dark
 ignore:
   - .git/*
   - build/*
+  - README.md
+  - Makefile
