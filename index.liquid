@@ -1,14 +1,12 @@
 extends: default.liquid
 ---
-<div >
-  <h2>Blog!</h2>
-  <!--<br />-->
-  <div>
-    {% for post in posts %}
-      <div>
-        <h4>{{post.title}}</h4>
-        <h4><a href="{{post.path}}">{{ post.title }}</a></h4>
-      </div>
-    {% endfor %}
-  </div>
+<div>
+  {% for post in posts limit:10 %}
+    <div>
+      <section>
+        <span class="c-post-list__date">{{post.date | date: "%Y-%m-%d"}}</span>
+        <span class="c-post-list__title"><a href="{{post.path}}">{{ post.title }}</a></span>
+      </section>
+    </div>
+  {% endfor %}
 </div>
