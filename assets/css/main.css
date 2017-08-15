@@ -1,0 +1,223 @@
+/*!
+ * Copyright (c) 2017 Justin Charette
+ * Licensed under the MIT license
+ */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-regular.woff');
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('../fonts/hack-regular.woff');
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1b1b2d;
+  background-color: #2d2d2d;
+}
+
+/* set box-sizing globally */
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6em;
+  line-height: 1.6;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #4672e6;
+  text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+/* pre-code expands grid columns.  use horizontal scrolling to bring them back to size */
+pre {
+  font-family: 'Hack', monospaced;
+  line-height: 1.2em;
+  font-size: 0.8em;
+  overflow-x: auto;
+  padding: 0.5rem;
+  margin: 2rem 0;
+}
+
+code {
+  font-family: 'Hack', monospaced;
+  font-size: 0.8em;
+}
+
+p > code {
+  padding: 0.5rem;
+  background-color: hsl(225, 76%, 92%);
+  border-radius: 0.5rem;
+}
+
+.figure {
+  padding: 0.25rem;
+  box-shadow: 4px 4px 12px 2px #1b1b2d;
+}
+
+.figure > p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 0;
+}
+
+.figure > p > img {
+  width: 100%;
+}
+
+.c-content {
+  width: 100%;
+  height: 100%;
+  max-width: 112rem;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  box-shadow: 0px 4px 12px 2px black;
+
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+
+  /*
+  display: grid;
+
+  align-items: start;
+
+  grid-gap: 1rem;
+  grid-template-columns: 100%;
+
+  grid-template-rows:
+    fit-content(0)
+    1fr
+    fit-content(0);
+
+  grid-template-areas:
+    "blog-name"
+    "main"
+    "footer";
+    */
+}
+
+.c-blog-name {
+  grid-area: blog-name;
+}
+
+.c-blog-name__heading {
+  line-height: 1.2em;
+  text-align: center;
+  margin-right: 2rem;
+}
+
+.c-main {
+  grid-area: main;
+  flex-grow: 1;
+  font-size: 2rem;
+}
+
+.c-footer {
+  grid-area: footer;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 2px solid #4672e6;
+}
+
+.c-post__title {
+  text-align: center;
+  position: relative;
+  margin-bottom: 6rem;
+}
+
+.c-post__date {
+  font-size: 0.5em;
+  position: absolute;
+  top: 100%;
+  right: 0;
+}
+
+
+/* on mobile screen sizes */
+@media (max-width: 49.99rem) {
+  .figure {
+    width: calc(100% + 2rem);
+    margin: 4rem 0 4rem -1rem;
+  }
+
+  .c-content {
+    padding: 2rem 1rem 0;
+  }
+}
+
+/* on screens bigger than mobile-size */
+@media (min-width: 50rem) {
+  .figure {
+    width: calc(100% + 3rem);
+    margin: 4rem 0 4rem -2rem;
+  }
+
+  .c-content {
+    padding: 2rem 4rem 0;
+  }
+}
+
+
+
+.u-text--center {
+  text-align: center;
+}
+
+
+.c-post-list__date {
+  margin-right: 2rem;
+}
+
+
+/* NOTES */
+
+.o-note {
+  padding: 1rem;
+  background-color: hsl(225, 76%, 92%);
+  border: 3px solid #2f406f;
+}
+
+.o-note > *:first-child {
+  margin-top: 0;
+}
+
+.o-note > *:last-child {
+  margin-bottom: 0;
+}
+
+.o-note.is-note:before {
+  content: "Note!";
+  font-weight: bold;
+}
+
+.o-note.is-pro-tip:before {
+  content: "Pro Tip!";
+  font-weight: bold;
+}
+
